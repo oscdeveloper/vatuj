@@ -8,7 +8,9 @@
     "start": "ng serve",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "local": "cross-env NODE_ENV=development ng serve -v=false -sm=true -vc=true -pr=false -ec=true -w=true -p=5",
+    "prod": "cross-env NODE_ENV=production ng build -v=false -sm=false -vc=true -pr=true -ec=true -w=false --output-hashing=all"
   },
   "private": true,
   "dependencies": {
@@ -17,10 +19,12 @@
     "@angular/core": "^2.4.0",
     "@angular/forms": "^2.4.0",
     "@angular/http": "^2.4.0",
+    "@angular/material": "^2.0.0-beta.2",
     "@angular/platform-browser": "^2.4.0",
     "@angular/platform-browser-dynamic": "^2.4.0",
     "@angular/router": "^3.4.0",
     "core-js": "^2.4.1",
+    "hammerjs": "^2.0.8",
     "rxjs": "^5.1.0",
     "zone.js": "^0.7.6"
   },
@@ -30,6 +34,7 @@
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "codelyzer": "~2.0.0-beta.4",
+    "cross-env": "^3.1.4",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
     "karma": "~1.4.1",

@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
-import { ConfigService } from './services/config.service';
+import { ConfigService } from '../../services/config.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html'
+  selector: 'app-invoice-new',
+  templateUrl: './invoice-new.component.html',
+  styleUrls: ['./invoice-new.component.css']
 })
-export class AppComponent implements OnInit {
+export class InvoiceNewComponent implements OnInit {
 
   title: string = '';
 
   constructor(
     private configService: ConfigService,
     private titleService: Title
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.title = this.configService.getAppTitle();
     this.titleService.setTitle( this.title );
   }
-    
 
 }

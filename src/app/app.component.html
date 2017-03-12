@@ -1,3 +1,54 @@
-<h1>
-  {{title}}
-</h1>
+<md-sidenav-container>
+
+  <md-sidenav #sidenav mode="over" align="end">
+    <md-nav-list>
+      <md-list-item>
+        <a md-icon-button routerLink="/invoice/new">
+          <md-icon>add_circle</md-icon>
+          <span>New invoice</span>
+        </a>
+      </md-list-item>
+      <md-list-item>
+        <a md-icon-button routerLink="/invoice/open">
+          <md-icon>unarchive</md-icon>
+          <span>Open invoice</span>
+        </a>
+      </md-list-item>
+      <md-list-item>
+        <a md-icon-button routerLink="/invoice/save">
+          <md-icon>done</md-icon>
+          <span>Save invoice</span>
+        </a>
+      </md-list-item>
+      <md-list-item>
+        <a md-icon-button routerLink="/settings">
+          <md-icon>settings</md-icon>
+          <span>Settings</span>
+        </a>
+      </md-list-item>    
+      <md-list-item>
+        <a md-icon-button routerLink="/about">
+          <md-icon>info</md-icon>
+          <span>About</span>
+        </a>
+      </md-list-item>      
+      <md-list-item>
+        <a md-icon-button routerLink="/logout">
+          <md-icon>power_settings_new</md-icon>
+          <span>Logout</span>
+        </a>
+      </md-list-item>
+    </md-nav-list>    
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <span>{{title}}</span>
+    <span class="spacer"></span>
+    <button md-icon-button (click)="sidenav.open()">
+      <md-icon>more_vert</md-icon>
+    </button>
+  </md-toolbar>
+
+  <router-outlet></router-outlet>
+
+</md-sidenav-container>
