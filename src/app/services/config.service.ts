@@ -19,7 +19,7 @@ export class ConfigService {
     private titleService: Title
   ) { }
 
-  getAppTitle(): string {
+  getTitle(): string {
     return this.config.title;
   }
 

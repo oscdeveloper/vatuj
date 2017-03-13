@@ -15,7 +15,7 @@ export class DialogAboutComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.title = this.configService.getAppTitle();
+    this.title = this.configService.getTitle();
     this.year =  (new Date).getFullYear();
   }
 

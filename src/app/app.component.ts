@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.title = this.configService.getAppTitle();
+    this.title = this.configService.getTitle();
   }
     
 
