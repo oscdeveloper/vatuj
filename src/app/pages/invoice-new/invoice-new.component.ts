@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
 import { ConfigService } from '../../services/config.service';
+import { ItemList } from './item-list.model';
 
 @Component({
   selector: 'app-invoice-new',
@@ -9,16 +10,30 @@ import { ConfigService } from '../../services/config.service';
 })
 export class InvoiceNewComponent implements OnInit {
 
-  title: string = '';
+  title: string = 'New invoice';
+  itemList: Array<ItemList> = [];
 
   constructor(
     private configService: ConfigService,
     private titleService: Title
   ) { }
 
+  addItem(): void {
+    this.itemList.push({
+      id: null,
+      name: '',
+      price: 0
+    });
+  }
+
+  removeItem(itemToRemove): void {
+    this.itemList = this.itemList.filter((item)=>{
+      return item !== itemToRemove;
+    });
+  }
+
   ngOnInit() {
-    this.title = this.configService.getAppTitle();
-    this.titleService.setTitle( this.title );
+    this.configService.setAppTitle(this.title);    
   }
 
 }

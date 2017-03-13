@@ -1,5 +1,30 @@
-<md-grid-list cols="4" rowHeight="100px" >
-      <md-grid-tile>      
-        
-      </md-grid-tile>
-</md-grid-list>
+<md-list>
+  <h2 md-subheader>Primary data</h2>
+  <md-list-item class="invoice-number">      
+    <md-input-container>
+      <input mdInput placeholder="Invoice number" value="" type="text">
+    </md-input-container>
+  </md-list-item>
+  <md-divider></md-divider>
+  <h2 md-subheader>Items list</h2>
+  <md-list-item>
+    <button md-icon-button (click)="addItem()">
+      <md-icon>add_circle</md-icon>
+      <span>Add new item</span>
+    </button>
+  </md-list-item> 
+  <md-list-item *ngFor="let item of itemList; let i = index">
+    <md-input-container>
+      <input mdInput disabled value="{{i+1}}" type="number">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Name" value="{{item.name}}" type="text">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Price" value="{{item.price}}" type="number">
+    </md-input-container>
+    <button md-icon-button (click)="removeItem(item)">
+      <md-icon>delete</md-icon>
+    </button>
+  </md-list-item>      
+</md-list>

@@ -48,3 +48,11 @@ body {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
 }
+
+.invoice-number {
+  md-input-container {
+    width: 300px;
+    margin: 0 auto;
+    //text-align: center;
+  }
+}

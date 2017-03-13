@@ -1,6 +1,6 @@
 <md-sidenav-container>
 
-  <md-sidenav #sidenav mode="over" align="end">
+  <md-sidenav #sidenavLeft mode="over" align="start">
     <md-nav-list>
       <md-list-item>
         <a md-icon-button routerLink="/invoice/new">
@@ -20,6 +20,11 @@
           <span>Save invoice</span>
         </a>
       </md-list-item>
+    </md-nav-list>
+  </md-sidenav>
+
+  <md-sidenav #sidenavRight mode="over" align="end">
+    <md-nav-list>
       <md-list-item>
         <a md-icon-button routerLink="/settings">
           <md-icon>settings</md-icon>
@@ -42,9 +47,12 @@
   </md-sidenav>
 
   <md-toolbar color="primary">
+    <button md-icon-button (click)="sidenavLeft.open()">
+      <md-icon>menu</md-icon>
+    </button>
     <span>{{title}}</span>
     <span class="spacer"></span>
-    <button md-icon-button (click)="sidenav.open()">
+    <button md-icon-button (click)="sidenavRight.open()">
       <md-icon>more_vert</md-icon>
     </button>
   </md-toolbar>
