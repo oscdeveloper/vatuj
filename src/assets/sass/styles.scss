@@ -25,13 +25,13 @@ $theme: mat-light-theme($primary, $accent);
   md-sidenav {
     padding: 10px 20px;
     width: 140px;
-    .mat-nav-list {
+    /* .mat-nav-list {
       .mat-list-item {
         .mat-list-item-content {
           padding: 0;
         }
       }
-    }
+    } */
   }
 
 }
@@ -42,6 +42,14 @@ body {
   font-family: Roboto;
   margin: 0;
 }
+
+a {
+  color: mat-color($primary);
+  text-decoration: none;
+  outline: none;
+  //border-bottom: 1px dotted $primary(50);
+}
+
 
 .spacer {
     -webkit-box-flex: 1;
@@ -55,4 +63,8 @@ body {
     margin: 0 auto;
     //text-align: center;
   }
+}
+
+.about {
+  text-align: right;
 }

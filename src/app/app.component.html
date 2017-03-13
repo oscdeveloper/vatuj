@@ -3,19 +3,19 @@
   <md-sidenav #sidenavLeft mode="over" align="start">
     <md-nav-list>
       <md-list-item>
-        <a md-icon-button routerLink="/invoice/new">
+        <a md-button routerLink="/invoice/new">
           <md-icon>add_circle</md-icon>
           <span>New invoice</span>
         </a>
       </md-list-item>
       <md-list-item>
-        <a md-icon-button routerLink="/invoice/open">
+        <a md-button routerLink="/invoice/open">
           <md-icon>unarchive</md-icon>
           <span>Open invoice</span>
         </a>
       </md-list-item>
       <md-list-item>
-        <a md-icon-button routerLink="/invoice/save">
+        <a md-button routerLink="/invoice/save">
           <md-icon>done</md-icon>
           <span>Save invoice</span>
         </a>
@@ -26,19 +26,19 @@
   <md-sidenav #sidenavRight mode="over" align="end">
     <md-nav-list>
       <md-list-item>
-        <a md-icon-button routerLink="/settings">
+        <a md-button routerLink="/settings">
           <md-icon>settings</md-icon>
           <span>Settings</span>
         </a>
       </md-list-item>    
       <md-list-item>
-        <a md-icon-button routerLink="/about">
+        <button md-button (click)="openDialog()">
           <md-icon>info</md-icon>
           <span>About</span>
-        </a>
+        </button>
       </md-list-item>      
       <md-list-item>
-        <a md-icon-button routerLink="/logout">
+        <a md-button routerLink="/logout">
           <md-icon>power_settings_new</md-icon>
           <span>Logout</span>
         </a>
