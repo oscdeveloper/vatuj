@@ -33,7 +33,7 @@ export class InvoiceNewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.configService.setAppTitle(this.title);    
+    this.configService.setPageTitle(this.title);
   }
 
 }

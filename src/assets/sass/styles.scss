@@ -38,6 +38,8 @@ $theme: mat-light-theme($primary, $accent);
 
 @include my-theme($theme);
 
+html { font-size: 62.5%; } 
+
 body {
   font-family: Roboto;
   margin: 0;
@@ -50,6 +52,18 @@ a {
   //border-bottom: 1px dotted $primary(50);
 }
 
+md-toolbar {
+  h1 {
+    font-size: 2.6rem;
+    font-weight: normal;
+    margin: 0 0 0 20px;
+  }
+  h2 {
+    font-size: 2.0rem;
+    font-weight: normal;
+    margin: 0 20px 0 0;
+  }  
+}
 
 .spacer {
     -webkit-box-flex: 1;

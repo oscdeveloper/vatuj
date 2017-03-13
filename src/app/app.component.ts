@@ -10,13 +10,17 @@ import { DialogAboutComponent } from './dialogs/dialog-about/dialog-about.compon
 })
 export class AppComponent implements OnInit {
 
-  title: string = '';
+  title: any = {};
 
   constructor(
     private configService: ConfigService,
-    private titleService: Title,
     public dialog: MdDialog
-  ) {}
+  ) {
+    configService.changeTitleSource$.subscribe(
+      title => {
+        this.title = title;
+      });
+  }
 
   openDialog() {
     this.dialog.open(DialogAboutComponent);
@@ -24,7 +28,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.title = this.configService.getAppTitle();
-    this.titleService.setTitle( this.title );
   }
     
 

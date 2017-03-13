@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
@@ -29,7 +30,8 @@ import { DialogAboutComponent } from './dialogs/dialog-about/dialog-about.compon
     FormsModule,
     HttpModule,
     RouterModule.forRoot(APP_ROUTES),
-    MaterialModule
+    MaterialModule.forRoot(),
+    FlexLayoutModule.forRoot()
   ],
   providers: [
     ConfigService,
