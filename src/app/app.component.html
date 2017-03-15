@@ -1,4 +1,4 @@
-<md-sidenav-container>
+<md-sidenav-container fxLayout="column" fxLayoutAlign="start stretch" fxFill>
 
   <md-sidenav #sidenavLeft mode="over" align="start">
     <md-nav-list>
@@ -46,18 +46,21 @@
     </md-nav-list>    
   </md-sidenav>
 
-  <md-toolbar color="primary">
-    <button md-icon-button (click)="sidenavLeft.open()">
-      <md-icon>menu</md-icon>
-    </button>
-    <h1>{{title.page}}</h1>
-    <span class="spacer"></span>
-    <h2>{{title.app}}</h2> 
-    <button md-icon-button (click)="sidenavRight.open()">
-      <md-icon>more_vert</md-icon>
-    </button>
-  </md-toolbar>
+  <div fxLayout="column" fxLayoutAlign="start stretch" fxFill>
+  
+    <md-toolbar color="primary">
+      <button md-icon-button (click)="sidenavLeft.open()">
+        <md-icon>menu</md-icon>
+      </button>
+      <h1>{{title.page}}</h1>
+      <span class="spacer"></span>
+      <h2>{{title.app}}</h2> 
+      <button md-icon-button (click)="sidenavRight.open()">
+        <md-icon>more_vert</md-icon>
+      </button>
+    </md-toolbar>
 
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
+  </div>
 
 </md-sidenav-container>

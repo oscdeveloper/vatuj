@@ -38,13 +38,19 @@ $theme: mat-light-theme($primary, $accent);
 
 @include my-theme($theme);
 
-html { font-size: 62.5%; } 
+html { 
+  font-size: 62.5%; 
+  height: 100%;
+} 
 
 body {
   font-family: Roboto;
   font-size: 1.6rem;
   margin: 0;
+  height: 100%;
 }
+
+
 
 a {
   color: mat-color($primary);
@@ -73,6 +79,7 @@ md-toolbar {
 }
 
 .invoice-number {
+  text-align: center;
   md-input-container {
     width: 300px;
     margin: 0 auto;
@@ -82,4 +89,14 @@ md-toolbar {
 
 .about {
   text-align: right;
+}
+
+app-invoice-new {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .itemList {
+    padding: 0 20px;
+  }
 }

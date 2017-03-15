@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
 import { ConfigService } from '../../services/config.service';
-import { ItemList } from './item-list.model';
+import { ItemList } from '../../models/item-list.model';
 
 @Component({
   selector: 'app-invoice-new',
   templateUrl: './invoice-new.component.html',
-  styleUrls: ['./invoice-new.component.css']
+  host: {
+    "fxFill": "",
+    "fxLayout": "column"
+  }
 })
 export class InvoiceNewComponent implements OnInit {
 
@@ -26,7 +29,7 @@ export class InvoiceNewComponent implements OnInit {
     });
   }
 
-  removeItem(itemToRemove): void {
+  removeItem(itemToRemove: any): void {
     this.itemList = this.itemList.filter((item)=>{
       return item !== itemToRemove;
     });
