@@ -1,15 +1,15 @@
 <h1 md-dialog-title>
-  About {{title.app}}
+  About {{appConfig.title}}
 </h1>
 <md-dialog-content>
-  <p>Application was created only for demo purposes.<br>It presents communication between Angular2 and Laravel frameworks.</p>
+  <p>Application was created only for demo purposes.<br>It presents communication between Angular2 and Laravel framework.</p>
   <md-divider></md-divider>
   <p class="about">
-    Arkadiusz Krakiewicz
+    {{appConfig.author}}
     <br>
-    <a href="http://www.oscdeveloper.pl" target="_blank">oscDeveloper.pl</a>
+    <a href="{{appConfig.url}}" target="_blank">{{appConfig.www}}</a>
     <br>
-    &copy; {{year}}
+    &copy; {{currentYear}}
   </p>
 </md-dialog-content>
 <md-dialog-actions>

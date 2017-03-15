@@ -9,9 +9,12 @@ export class ConfigService {
   changeTitleSource$ = this.changeTitleSource.asObservable();
 
   private config: any = {
-    title: {
-      app: 'Vatuj.pl',
-      page: ''
+    app: {
+      title: 'Vatuj.pl',
+      currentPageTitle: '',
+      author: 'Arkadiusz Krakiewicz',
+      url: 'http://www.oscdeveloper.pl',
+      www: 'oscDeveloper.pl',
     }
   };
 
@@ -19,15 +22,18 @@ export class ConfigService {
     private titleService: Title
   ) { }
 
-  getTitle(): string {
-    return this.config.title;
+  getAppConfig(): string {
+    return this.config.app;
   }
 
-  setPageTitle(title: string): string {
-    this.config.title.page = title;
-    this.titleService.setTitle(this.config.title.app + ' - ' + this.config.title.page);
-    this.announceChangeTitle(this.config.title);
-    return this.config.title;
+  getCurrentYear(): number {
+    return (new Date).getFullYear();
+  }
+
+  setPageTitle(title: string): void {
+    this.config.app.currentPageTitle = title;
+    this.titleService.setTitle(this.config.app.title + ' - ' + this.config.app.currentPageTitle);
+    this.announceChangeTitle(this.config.app.currentPageTitle);
   }
 
   announceChangeTitle(title: any) {
