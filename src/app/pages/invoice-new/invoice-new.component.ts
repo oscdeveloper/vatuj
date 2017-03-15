@@ -5,11 +5,7 @@ import { ItemList } from '../../models/item-list.model';
 
 @Component({
   selector: 'app-invoice-new',
-  templateUrl: './invoice-new.component.html',
-  host: {
-    "fxFill": "",
-    "fxLayout": "column"
-  }
+  templateUrl: './invoice-new.component.html'
 })
 export class InvoiceNewComponent implements OnInit {
 

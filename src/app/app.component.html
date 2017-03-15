@@ -52,15 +52,24 @@
       <button md-icon-button (click)="sidenavLeft.open()">
         <md-icon>menu</md-icon>
       </button>
-      <h1>{{title.page}}</h1>
+      <h1>{{appConfig.currentPageTitle}}</h1>
       <span class="spacer"></span>
-      <h2>{{title.app}}</h2> 
+      <h2>{{appConfig.title}}</h2> 
       <button md-icon-button (click)="sidenavRight.open()">
         <md-icon>more_vert</md-icon>
       </button>
     </md-toolbar>
 
     <router-outlet></router-outlet>
+
+    <footer fxFlex="40px" fxLayoutAlign="center stretch">
+       <div fxFlexAlign="center">
+         <span>{{appConfig.author}}</span> 
+         <a href="{{appConfig.url}}" target="_blank">{{appConfig.www}}</a> 
+         <span>&copy; {{currentYear}}</span>
+       </div>
+    </footer>
+
   </div>
 
 </md-sidenav-container>

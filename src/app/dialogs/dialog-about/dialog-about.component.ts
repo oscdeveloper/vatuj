@@ -7,16 +7,16 @@ import { ConfigService } from '../../services/config.service';
 })
 export class DialogAboutComponent implements OnInit {
 
-  title: string = '';
-  year: number = null;
+  appConfig: any;
+  currentYear: number;
 
   constructor(
     private configService: ConfigService
   ) { }
 
   ngOnInit() {
-    this.title = this.configService.getTitle();
-    this.year =  (new Date).getFullYear();
+    this.appConfig = this.configService.getAppConfig();
+    this.currentYear =  this.configService.getCurrentYear();
   }
 
 }

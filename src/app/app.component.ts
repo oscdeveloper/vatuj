@@ -10,7 +10,9 @@ import { DialogAboutComponent } from './dialogs/dialog-about/dialog-about.compon
 })
 export class AppComponent implements OnInit {
 
-  title: any = {};
+  title: any;
+  appConfig: any;
+  currentYear: number;
 
   constructor(
     private configService: ConfigService,
@@ -27,7 +29,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.title = this.configService.getTitle();
+    this.appConfig = this.configService.getAppConfig();
+    this.currentYear =  this.configService.getCurrentYear();
   }
     
 
