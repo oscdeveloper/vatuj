@@ -1,4 +1,6 @@
 # Vatuj.pl
+Development in progress...
+
 Simple way to prepare invoices for Your customers! :)
 
 App is based on Angular2 (frontend) + Laravel (backend).
