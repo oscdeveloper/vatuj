@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "local": "cross-env NODE_ENV=development ng serve -v=false -sm=true -vc=true -pr=false -ec=true -w=true -p=5",
+    "local": "cross-env NODE_ENV=development ng serve -v=false -sm=true -vc=true -pr=false -ec=true -w=true -p=666",
     "prod": "cross-env NODE_ENV=production ng build -v=false -sm=false -vc=true -pr=true -ec=true -w=false --output-hashing=all"
   },
   "private": true,

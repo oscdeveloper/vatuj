@@ -21,7 +21,7 @@ export class InvoiceNewComponent implements OnInit {
     this.itemList.push({
       id: null,
       name: '',
-      price: 0
+      price: null
     });
   }
 
