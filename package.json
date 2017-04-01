@@ -10,14 +10,14 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "local": "cross-env NODE_ENV=development ng serve -v=false -sm=true -vc=true -pr=false -ec=true -w=true -p=666",
-    "prod": "cross-env NODE_ENV=production ng build -v=false -sm=false -vc=true -pr=true -ec=true -w=false --output-hashing=all"
+    "prod": "cross-env NODE_ENV=production ng build -v=false -sm=false -vc=true -pr=true -ec=true -w=false --output-hashing=all --aot"
   },
   "private": true,
   "dependencies": {
     "@angular/common": "^2.4.0",
     "@angular/compiler": "^2.4.0",
     "@angular/core": "^2.4.0",
-    "@angular/flex-layout": "^2.0.0-rc.1",
+    "@angular/flex-layout": "^2.0.0-beta.6",
     "@angular/forms": "^2.4.0",
     "@angular/http": "^2.4.0",
     "@angular/material": "^2.0.0-beta.2",
@@ -30,7 +30,7 @@
     "zone.js": "^0.7.6"
   },
   "devDependencies": {
-    "@angular/cli": "^1.0.0-beta.32.3",
+    "@angular/cli": "^1.0.0",
     "@angular/compiler-cli": "^2.4.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
@@ -41,9 +41,9 @@
     "karma": "~1.4.1",
     "karma-chrome-launcher": "~2.0.0",
     "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^0.2.0",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "karma-coverage-istanbul-reporter": "^0.2.0",
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
     "tslint": "~4.4.2",
