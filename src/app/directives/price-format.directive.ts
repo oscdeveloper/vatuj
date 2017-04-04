@@ -20,17 +20,19 @@ export class PriceFormatDirective {
       if ( key === '.' ) {
         key = ',';
         if ( value !== '' && (value.match(/,/g) || []).length === 0 ) {
-          this.el.nativeElement.value += key;
+          let start = this.el.nativeElement.selectionStart;
+          this.el.nativeElement.value = value.slice(0, start) + key + value.slice(start, value.length);
+          this.el.nativeElement.setSelectionRange(start+1,start+1);
         }        
         return false;
       }
 
       value += key;
-
-      if ( value.match(/^[1-9]/g) === null ) {
+      
+      if ( value.match(/^[0-9]/g) === null && ( key != '0' && value.indexOf(',') > -1 ) ) {
         return false;
       } else if ( value.indexOf(',') > -1 ) {
-        if ( value.match(/^[\d]+,\d{0,2}$/g) === null ) {
+        if ( value.match(/^[\d]+,\d{0,2}$/g) === null && key != '0' ) {
           return false;
         } else if ( (value.match(/,/g) || []).length > 1 ) {
           return false;
@@ -45,7 +47,13 @@ export class PriceFormatDirective {
 
   @HostListener('blur', ['$event.target.value']) 
   keyUp(value: string) {
-    value = value.replace(/,$/g, '').replace(/(,\d)$/g, '$10').replace(/,00$/g, '');
+    value = value
+            .replace(/,$/g, '')
+            .replace(/^,(.*?)/g, '0,$1')
+            .replace(/(,\d)$/g, '$10')
+            .replace(/,00$/g, '')            
+            .replace(/^0+$/g, '0')
+            .replace(/^0+(^,)?(\d+)/g, '$1$2');
     this.el.nativeElement.value = value;
   }
 
@@ -55,6 +63,6 @@ export class PriceFormatDirective {
             return false;
         }
         return true;
-    }  
+  }
 
 }
