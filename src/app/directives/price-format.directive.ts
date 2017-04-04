@@ -15,26 +15,37 @@ export class PriceFormatDirective {
     if ( this.isNumberKey(event) ) {
 
       let key = event.key,
-          value = this.el.nativeElement.value + key;
-          value = value.replace(/[\.]+/g, ',');
+          value = this.el.nativeElement.value;
+          
+      if ( key === '.' ) {
+        key = ',';
+        if ( value !== '' && (value.match(/,/g) || []).length === 0 ) {
+          this.el.nativeElement.value += key;
+        }        
+        return false;
+      }
+
+      value += key;
 
       if ( value.match(/^[1-9]/g) === null ) {
         return false;
       } else if ( value.indexOf(',') > -1 ) {
         if ( value.match(/^[\d]+,\d{0,2}$/g) === null ) {
           return false;
-        }  
+        } else if ( (value.match(/,/g) || []).length > 1 ) {
+          return false;
+        }        
       }
-    
-      this.el.nativeElement.value = value;
+      return true;
+    } else {
+      return false;
     }
-    
-    return false;
+
   }
 
   @HostListener('blur', ['$event.target.value']) 
   keyUp(value: string) {
-    value = value.replace(/,$/g, '').replace(/(,\d)$/g, '$10');
+    value = value.replace(/,$/g, '').replace(/(,\d)$/g, '$10').replace(/,00$/g, '');
     this.el.nativeElement.value = value;
   }
 
