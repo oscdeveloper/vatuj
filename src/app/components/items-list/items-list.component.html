@@ -20,10 +20,10 @@
             <input mdInput disabled value="{{i+1}}" type="number">
           </md-input-container>
           <md-input-container fxFlex fxFlexOffset="10px">
-            <input mdInput placeholder="Name" value="{{item.name}}" type="text">
+            <input mdInput placeholder="Name" [(ngModel)]="item.name" type="text">
           </md-input-container>
           <md-input-container fxFlex="100px" fxFlexOffset="10px">
-            <input mdInput placeholder="Price" value="{{item.price}}" type="number">
+            <input mdInput placeholder="Price" priceFormat [ngModel]="item.price" (ngModelChange)="item.price=$event" type="text">
           </md-input-container>
           <button md-icon-button (click)="removeItem(item)" fxFlex="30px" fxFlexOffset="10px">
             <md-icon>delete</md-icon>

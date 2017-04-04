@@ -11,12 +11,16 @@ import { AppComponent } from './app.component';
 import { APP_ROUTES } from './app-routes-config';
 
 import { ConfigService } from './services/config.service';
+
 import { InvoiceListComponent } from './components/invoice-list/invoice-list.component';
 import { InvoiceNewComponent } from './components/invoice-new/invoice-new.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { DialogAboutComponent } from './dialogs/dialog-about/dialog-about.component';
 import { ItemsListComponent } from './components/items-list/items-list.component';
 import { SellerComponent } from './components/seller/seller.component';
+
+import { PriceFormatPipe } from './pipes/price-format.pipe';
+import { PriceFormatDirective } from './directives/price-format.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,9 @@ import { SellerComponent } from './components/seller/seller.component';
     PageNotFoundComponent,
     DialogAboutComponent,
     ItemsListComponent,
-    SellerComponent
+    SellerComponent,
+    PriceFormatPipe,
+    PriceFormatDirective
   ],
   imports: [
     BrowserModule,
