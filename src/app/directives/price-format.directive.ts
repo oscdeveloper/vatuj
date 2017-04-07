@@ -39,21 +39,21 @@ export class PriceFormatDirective {
         }        
       }
       return true;
-    } else {
-      return false;
     }
-
+    
+    return false;
+    
   }
 
   @HostListener('blur', ['$event.target.value']) 
-  keyUp(value: string) {
+  blur(value: string) {
     value = value
-            .replace(/,$/g, '')
-            .replace(/^,(.*?)/g, '0,$1')
+            .replace(/,$/g, '') // 123, -> 123
+            .replace(/^,(.*?)/g, '0,$1') // , | ,02 -> 0,02
             .replace(/(,\d)$/g, '$10')
-            .replace(/,00$/g, '')            
-            .replace(/^0+$/g, '0')
-            .replace(/^0+(^,)?(\d+)/g, '$1$2');
+            .replace(/,00$/g, '') // ,00 -> null           
+            .replace(/^0+$/g, '0') // 0000002 -> 0
+            .replace(/^0+(^,)?(\d+)/g, '$1$2'); // 0000000,02 -> 0,02
     this.el.nativeElement.value = value;
   }
 

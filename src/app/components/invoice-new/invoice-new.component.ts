@@ -3,7 +3,7 @@ import { Title }     from '@angular/platform-browser';
 import { ConfigService } from '../../services/config.service';
 
 @Component({
-  selector: 'app-invoice-new',
+  selector: 'invoice-new',
   templateUrl: './invoice-new.component.html'
 })
 export class InvoiceNewComponent implements OnInit {

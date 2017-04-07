@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfigService } from '../../services/config.service';
 
 @Component({
   selector: 'seller',
@@ -6,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SellerComponent implements OnInit {
 
-  constructor() { }
+  seller: any;
+
+  constructor(
+    private configService: ConfigService
+  ) { }
 
   ngOnInit() {
+    this.seller = this.configService.getSellerInfo();
   }
 
 }

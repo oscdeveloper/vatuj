@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MdSnackBar } from '@angular/material';
 import { ItemList } from '../../models/item-list.model';
 
 @Component({
@@ -13,7 +14,9 @@ export class ItemsListComponent implements OnInit {
     price: null
   }];
 
-  constructor() { }
+  constructor(
+    public snackBar: MdSnackBar
+  ) { }
 
   addItem(): void {
     this.itemList.push({
@@ -23,14 +26,22 @@ export class ItemsListComponent implements OnInit {
     });
   }
 
-  removeItem(itemToRemove: any): void {
+  removeItem(itemToRemove: any): boolean {
     if ( this.itemList.length > 1 ) { // min one item is always available
       this.itemList = this.itemList.filter(item=>{
             return item !== itemToRemove;
           });
+      return true;
     }
-    
+    this.openSnackbar();
+    return false;
   }
+
+  openSnackbar(){
+    this.snackBar.open('At least one item must be visible on invoice.', null, {
+      duration: 3000
+    });
+  }  
 
   ngOnInit() {
   }

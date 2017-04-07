@@ -1,5 +1,5 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
@@ -21,6 +21,13 @@ import { SellerComponent } from './components/seller/seller.component';
 
 import { PriceFormatPipe } from './pipes/price-format.pipe';
 import { PriceFormatDirective } from './directives/price-format.directive';
+import { BillToComponent } from './components/bill-to/bill-to.component';
+
+export function configFactory(configService: ConfigService) {
+  return () => {
+    return configService.init();
+  }  
+}
 
 @NgModule({
   declarations: [
@@ -32,7 +39,8 @@ import { PriceFormatDirective } from './directives/price-format.directive';
     ItemsListComponent,
     SellerComponent,
     PriceFormatPipe,
-    PriceFormatDirective
+    PriceFormatDirective,
+    BillToComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +51,12 @@ import { PriceFormatDirective } from './directives/price-format.directive';
     FlexLayoutModule.forRoot()
   ],
   providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: configFactory,
+      deps: [ConfigService],
+      multi: true
+    },
     ConfigService,
     Title
   ],
