@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
-import { Title }      from '@angular/platform-browser';
-import { Subject }    from 'rxjs/Subject';
+import { Title } from '@angular/platform-browser';
+import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import { SellerModel } from '../models/seller.model';
+import { AppConfigModel } from '../models/app-config.model';
 
 @Injectable()
 export class ConfigService {
@@ -18,7 +20,7 @@ export class ConfigService {
     private http: Http,
     private titleService: Title
   ) { }
-  
+
   init(): Promise<boolean> {
     return new Promise((resolve) => {
       this.loadConfig().subscribe(
@@ -41,13 +43,13 @@ export class ConfigService {
   setConfig(config: any): any {
     this.config = config;
     return this;
-  }  
+  }
 
-  getAppConfig(): string {
+  getAppConfig(): AppConfigModel {
     return this.config.app;
   }
 
-  getSellerInfo(): string {
+  getSellerInfo(): SellerModel {
     return this.config.seller;
   }
 
@@ -63,6 +65,6 @@ export class ConfigService {
 
   announceChangeTitle(title: any) {
     this.changeTitleSource.next(title);
-  }  
+  }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfigService } from '../../services/config.service';
+import { SellerModel } from '../../models/seller.model';
 
 @Component({
   selector: 'seller',
@@ -7,7 +8,7 @@ import { ConfigService } from '../../services/config.service';
 })
 export class SellerComponent implements OnInit {
 
-  seller: any;
+  seller: SellerModel;
 
   constructor(
     private configService: ConfigService

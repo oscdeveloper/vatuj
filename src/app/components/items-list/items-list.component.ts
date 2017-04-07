@@ -28,7 +28,7 @@ export class ItemsListComponent implements OnInit {
 
   removeItem(itemToRemove: any): boolean {
     if ( this.itemList.length > 1 ) { // min one item is always available
-      this.itemList = this.itemList.filter(item=>{
+      this.itemList = this.itemList.filter(item => {
             return item !== itemToRemove;
           });
       return true;
@@ -37,11 +37,11 @@ export class ItemsListComponent implements OnInit {
     return false;
   }
 
-  openSnackbar(){
-    this.snackBar.open('At least one item must be visible on invoice.', null, {
+  openSnackbar() {
+    this.snackBar.open('At least one item must be visible on the invoice.', null, {
       duration: 3000
     });
-  }  
+  }
 
   ngOnInit() {
   }

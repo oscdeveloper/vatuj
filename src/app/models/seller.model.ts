@@ -1,5 +1,7 @@
-export class Seller {
-  id: number;
-  name: string;
-  price?: number;
+export class SellerModel {
+  companyName: string;
+  companyAddress: string;
+  vatNumber: string;
+  bankName: string;
+  bankAccountNumber: string;
 }
