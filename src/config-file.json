@@ -1,0 +1,15 @@
+{
+    "app": {
+        "title": "Vatuj.pl",
+        "author": "Arkadiusz Krakiewicz",
+        "url": "http://www.oscdeveloper.pl",
+        "www": "oscDeveloper.pl"
+    },
+    "seller": {
+        "companyName": "OSC Developer Arkadiusz Krakiewicz",
+        "companyAddress": "Poland, Lublin, 20-706, Magierskiego 21 Street",
+        "vatNumber": "PL 712 307 39 68",
+        "bankName": "Credit Agricole S.A.",
+        "bankAccountNumber": "22 1940 1076 5493 7060 0000 0000"
+    }
+}

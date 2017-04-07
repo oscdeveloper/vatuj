@@ -1,0 +1,31 @@
+<div fxFlex fxLayout="column" fxFlexAlign="start center" class="billTo">
+
+  <div fxLayout="column" fxFlexAlign="stretch">
+
+    <md-list fxLayout="column" fxLayoutAlign="center stretch" fxFlexOffset="10px">
+
+      <h2 md-subheader>Bill To</h2>
+
+      <div fxLayoutAlign="stretch">
+
+        <md-input-container fxFlex>
+          <input mdInput placeholder="Company name" [(ngModel)]="billTo" type="text">
+        </md-input-container>
+
+        <md-input-container fxFlex fxFlexOffset="10px">
+          <input mdInput placeholder="VAT number" [(ngModel)]="billTo" type="text">
+        </md-input-container>
+
+      </div>
+
+      <div fxLayoutAlign="stretch">        
+        <md-input-container fxFlex>
+          <input mdInput placeholder="Address" [(ngModel)]="billTo" type="text">
+        </md-input-container>
+      </div>
+
+    </md-list>
+
+  </div>
+
+</div>

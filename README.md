@@ -8,8 +8,7 @@ App is based on Angular2 (frontend) + Laravel (backend).
 ## Features used in application
 * [Angular CLI](https://github.com/angular/angular-cli)
 * [Material Design for Angular2](http://material.angular.io)
-* [Flex Layout](https://github.com/angular/flex-layout)
-* RWD
+* [Flex Box Layout](https://github.com/angular/flex-layout) + Responsive Web Design
 * Observables
 * [Routing](https://angular.io/docs/ts/latest/guide/router.html)
 * Title Service

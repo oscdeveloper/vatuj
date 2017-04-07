@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { InvoiceListComponent } from './pages/invoice-list/invoice-list.component';
-import { InvoiceNewComponent } from './pages/invoice-new/invoice-new.component';
-import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { InvoiceListComponent } from './components/invoice-list/invoice-list.component';
+import { InvoiceNewComponent } from './components/invoice-new/invoice-new.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 export const APP_ROUTES: Routes = [
   { 

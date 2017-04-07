@@ -1,0 +1,43 @@
+<div fxFlex fxLayout="column" fxFlexAlign="start center" class="seller">
+
+  <div fxLayout="column" fxFlexAlign="stretch">
+
+    <md-list fxLayout="column" fxLayoutAlign="center stretch" fxFlexOffset="10px">
+
+      <h2 md-subheader>Invoice issuer</h2>
+
+      <div fxLayoutAlign="stretch">
+
+        <md-input-container fxFlex>
+          <input mdInput placeholder="Company name" [(ngModel)]="seller.companyName" type="text">
+        </md-input-container>
+
+        <md-input-container fxFlex fxFlexOffset="10px">
+          <input mdInput placeholder="VAT number" [(ngModel)]="seller.vatNumber" type="text">
+        </md-input-container>
+
+      </div>
+
+      <div fxLayoutAlign="stretch">        
+        <md-input-container fxFlex>
+          <input mdInput placeholder="Address" [(ngModel)]="seller.companyAddress" type="text">
+        </md-input-container>
+      </div>       
+
+      <div fxLayout="row" fxLayoutAlign="stretch">
+
+        <md-input-container fxFlex="30">
+          <input mdInput placeholder="Bank name" [(ngModel)]="seller.bankName" type="text">
+        </md-input-container>
+
+        <md-input-container fxFlex="70" fxFlexOffset="10px">
+          <input mdInput placeholder="Bank account number" [(ngModel)]="seller.bankAccountNumber" type="text">
+        </md-input-container>
+
+      </div>
+
+    </md-list>
+
+  </div>
+
+</div>
