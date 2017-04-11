@@ -10,6 +10,7 @@ App is based on Angular2 (frontend) + Laravel (backend).
 * [Material Design for Angular2](http://material.angular.io)
 * [Flex Box Layout](https://github.com/angular/flex-layout) + Responsive Web Design
 * Observables
+* Reactive Forms
 * [Routing](https://angular.io/docs/ts/latest/guide/router.html)
 * Title Service
 * Data model

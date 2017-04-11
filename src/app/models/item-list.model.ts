@@ -1,5 +1,11 @@
-export class ItemList {
+export class ItemsList {
   id: number;
   name: string;
-  price?: number;
+  quantity: number;
+  tax: number;
+  taxValue: number;
+  priceIncTax: number;
+  priceExTax: number;
+  totalIncTax: number;
+  totalExTax: number;
 }

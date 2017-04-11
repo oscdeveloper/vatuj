@@ -34,9 +34,9 @@ export class ConfigService {
 
   loadConfig(): Observable<any> {
     return this.http.get('config-file.json').map(
-      (res:Response) => res.json()
+      (res: Response) => res.json()
     ).catch(
-      (error:any) => Observable.throw(error.json().error || 'Server error')
+      (error: any) => Observable.throw(error.json().error || 'Server error')
     );
   }
 

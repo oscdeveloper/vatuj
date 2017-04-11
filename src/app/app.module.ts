@@ -1,6 +1,6 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '@angular/material';
@@ -26,7 +26,7 @@ import { BillToComponent } from './components/bill-to/bill-to.component';
 export function configFactory(configService: ConfigService) {
   return () => {
     return configService.init();
-  }  
+  }
 }
 
 @NgModule({
@@ -44,7 +44,7 @@ export function configFactory(configService: ConfigService) {
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(APP_ROUTES),
     MaterialModule.forRoot(),
