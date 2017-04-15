@@ -13,11 +13,11 @@
         </button>
       </div>
 
-      <div formArrayName="itemsListForm" fxLayout="column" fxFlexAlign="center" fxFill class="subMdItemList">
+      <div fxLayout="column" fxFlexAlign="center" fxFill class="subMdItemList">
 
-        <md-list-item *ngFor="let item of itemList.controls; let i = index" [formGroupName]="i" fxLayout="row">
+        <md-list-item *ngFor="let item of itemsList; let i = index" fxLayout="row">
           <md-input-container fxFlex="30px">
-            <input mdInput disabled value="{{i+1}}" type="number" formControlName="id">
+            <input mdInput disabled value="{{i+1}}" type="number">
           </md-input-container>
           <md-input-container fxFlex fxFlexOffset="10px">
             <input mdInput placeholder="Name" [(ngModel)]="item.name" type="text">
@@ -34,15 +34,6 @@
           <md-input-container fxFlex="100px" fxFlexOffset="10px">
             <input mdInput placeholder="Price inc tax" priceFormat [(ngModel)]="item.priceIncTax" type="text" maxlength="13">
           </md-input-container>
-<!--          <md-input-container fxFlex="100px" fxFlexOffset="10px">
-            <input mdInput placeholder="Tax value" priceFormat [(ngModel)]="item.taxValue" type="text" maxlength="13">
-          </md-input-container>
-          <md-input-container fxFlex="100px" fxFlexOffset="10px">
-            <input mdInput placeholder="Total value ex tax" priceFormat [(ngModel)]="item.totalExTax" type="text" maxlength="13">
-          </md-input-container>
-          <md-input-container fxFlex="100px" fxFlexOffset="10px">
-            <input mdInput placeholder="Total value inc tax" priceFormat [(ngModel)]="item.totalIncTax" type="text" maxlength="13">
-          </md-input-container>-->
           <button md-icon-button (click)="removeItem(item)" fxFlex="30px" fxFlexOffset="10px">
             <md-icon>delete</md-icon>
           </button>

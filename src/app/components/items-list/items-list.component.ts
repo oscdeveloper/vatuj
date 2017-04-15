@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { MdSnackBar } from '@angular/material';
 import { ItemsList } from '../../models/item-list.model';
 import { TaxList } from '../../models/tax.model';
@@ -10,9 +9,7 @@ import { TaxList } from '../../models/tax.model';
 })
 export class ItemsListComponent implements OnInit {
 
-  itemsListForm: FormArray;
-
-  private itemList: Array<ItemsList> = [{
+  private itemsList: Array<ItemsList> = [{
     id: null,
     name: '',
     quantity: 1,
@@ -44,18 +41,11 @@ export class ItemsListComponent implements OnInit {
   ];
 
   constructor(
-    private fb: FormBuilder,
     public snackBar: MdSnackBar
-  ) {
-    this.createForm();
-  }
-
-  createForm() {
-    this.itemsListForm = this.fb.array(this.itemList);
-  }
+  ) {}
 
   addItem(): void {
-    this.itemList.push({
+    this.itemsList.push({
       id: null,
       name: '',
       quantity: 1,
@@ -69,8 +59,8 @@ export class ItemsListComponent implements OnInit {
   }
 
   removeItem(itemToRemove: any): boolean {
-    if ( this.itemList.length > 1 ) { // min one item is always visible
-      this.itemList = this.itemList.filter(item => {
+    if ( this.itemsList.length > 1 ) { // min one item is always visible
+      this.itemsList = this.itemsList.filter(item => {
         return item !== itemToRemove;
       });
       return true;

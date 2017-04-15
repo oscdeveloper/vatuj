@@ -1,6 +1,6 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule  } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '@angular/material';
@@ -44,7 +44,7 @@ export function configFactory(configService: ConfigService) {
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
+    FormsModule,
     HttpModule,
     RouterModule.forRoot(APP_ROUTES),
     MaterialModule.forRoot(),
